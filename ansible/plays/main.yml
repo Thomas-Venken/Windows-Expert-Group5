@@ -1,0 +1,8 @@
+---
+- name: Playbook for vSphere
+  hosts: localhost
+  become: yes
+
+  roles:
+    - role:
+  
