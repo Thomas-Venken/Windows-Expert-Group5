@@ -22,7 +22,6 @@
   
         "CPUs":             "2",
         "RAM":              "4096",
-        "RAM_reserve_all": true,
         "firmware": "bios",
 
         "storage": [
@@ -40,7 +39,7 @@
         ],
 
         "iso_paths": [
-          "[datastore1] iso/nl_windows_server_2016_updated_feb_2018_x64_dvd_11636724.iso"
+          "[iSCSI-Group05] iso/nl_windows_server_2016_updated_feb_2018_x64_dvd_11636724.iso"
         ],
         "floppy_files": [
           "setup/autounattend.xml"
