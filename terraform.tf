@@ -41,11 +41,6 @@ resource "vsphere_distributed_virtual_switch" "dvs" {
   standby_uplinks = []
 }
 
-data "vsphere_distributed_virtual_switch" "dvs" {
-  name          = "terraform-switch"
-  datacenter_id = "${data.vsphere_datacenter.dc.id}"
-}
-
 data "vsphere_host" "host1" {
   name          = "172.16.62.205"
   datacenter_id = "${data.vsphere_datacenter.dc.id}"
