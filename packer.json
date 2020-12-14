@@ -34,8 +34,8 @@
 
         "network_adapters": [
           {
-            "network": "VM Network",
-            "network_card": "vmnic0"
+            "network": "VM Network"
+            
           }
         ],
 
