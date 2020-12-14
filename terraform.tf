@@ -33,42 +33,52 @@ data "vsphere_network" "network" {
   datacenter_id = "${data.vsphere_datacenter.dc.id}"
 }
 
+variable "esxi_hosts" {
+  default = [
+    "172.16.62.205",
+    "172.16.62.59"
+  ]
+}
+
+data "vsphere_host" "host" {
+  count         = "${length(var.esxi_hosts)}"
+  name          = "${var.esxi_hosts[count.index]}"
+  datacenter_id = "${data.vsphere_datacenter.dc.id}"
+}
+
 resource "vsphere_distributed_virtual_switch" "dvs" {
-  name              = "terraform-switch"
-  datacenter_id     = "${data.vsphere_datacenter.dc.id}"
-  uplinks           = ["vmnic1"]
-  active_uplinks    = ["vmnic1"]
+  name          = "terraform-test-dvs"
+  datacenter_id = "${data.vsphere_datacenter.dc.id}"
+
+  uplinks         = ["uplink1"]
+  active_uplinks  = ["uplink1"]
   standby_uplinks = []
+
+  host {
+    host_system_id = "${data.vsphere_host.host.0.id}"
+    devices        = ["vmnic1"]
+  }
+
+  host {
+    host_system_id = "${data.vsphere_host.host.1.id}"
+    devices        = ["vmnic0"]
+  }
 }
 
-data "vsphere_distributed_virtual_switch" "dvs" {
-  name          = "terraform-switch"
-  datacenter_id = "${data.vsphere_datacenter.dc.id}"
-}
-
-data "vsphere_host" "host1" {
-  name          = "172.16.62.205"
-  datacenter_id = "${data.vsphere_datacenter.dc.id}"
-}
-
-data "vsphere_host" "host2" {
-  name          = "172.16.62.59"
-  datacenter_id = "${data.vsphere_datacenter.dc.id}"
-}
-
-resource "vsphere_distributed_port_group" "pg-rubrik-data" {
-  name                            = "Management network"
-  distributed_virtual_switch_uuid = "${data.vsphere_distributed_virtual_switch.dvs.id}"
-  active_uplinks                  = ["vmnic1"]
+resource "vsphere_distributed_port_group" "pg-group5-data" {
+  name                            = "Group5_Data"
+  vlan_id                         = "0"
+  distributed_virtual_switch_uuid = "${vsphere_distributed_virtual_switch.dvs.id}"
+  active_uplinks                  = ["uplink1"]
   standby_uplinks                 = []
-
-  host {
-    host_system_id = "${data.vsphere_host.host1.id}"
-    devices        = ["vmk0"]
+}
+resource "vsphere_vnic" "v1" {
+  count = "${length(var.esxi_hosts)}"
+  host = "${element(data.vsphere_host.host.*.id, count.index)}"
+  distributed_switch_port = vsphere_distributed_virtual_switch.dvs.id
+  distributed_port_group  = vsphere_distributed_port_group.pg-group5-data.id
+  ipv4 {
+    dhcp = true
   }
-
-  host {
-    host_system_id = "${data.vsphere_host.host2.id}"
-    devices        = ["vmk0"]
-  }
+  netstack                = "vmotion"
 }
