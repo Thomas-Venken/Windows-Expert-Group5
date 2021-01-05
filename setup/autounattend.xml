@@ -32,10 +32,6 @@ Location: Belgi덊Notes: Enter your comments here...
             <UserData>
                 <AcceptEula>true</AcceptEula>
                 <FullName>Administrator</FullName>
-                <Organization></Organization>
-                <ProductKey>
-                    <Key>----</Key>
-                </ProductKey>
             </UserData>
             <EnableFirewall>true</EnableFirewall>
             <DiskConfiguration>
