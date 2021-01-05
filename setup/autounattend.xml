@@ -25,7 +25,7 @@ Location: BelgiëNotes: Enter your comments here...
                 <OSImage>
                     <InstallTo>
                         <DiskID>0</DiskID>
-                        <PartitionID>2</PartitionID>
+                        <PartitionID>1</PartitionID>
                     </InstallTo>
                     <InstallFrom>
                         <MetaData wcm:action="add">
