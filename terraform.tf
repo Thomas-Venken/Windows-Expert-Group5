@@ -48,8 +48,8 @@ data "vsphere_host" "host" {
 # RESOURCES
 #####################################################################
 
-resource "vsphere_distributed_virtual_switch" "dvs" {
-  name          = "Group 5 Switch"
+resource "vsphere_distributed_virtual_switch" "dvs1" {
+  name          = "DCcompany1_1"
   datacenter_id = "${data.vsphere_datacenter.dc.id}"
 
   uplinks         = ["uplink1"]
@@ -67,17 +67,56 @@ resource "vsphere_distributed_virtual_switch" "dvs" {
   }
 }
 
+# resource "vsphere_distributed_virtual_switch" "dvs2" {
+#   name          = "DCcompany2_1"
+#   datacenter_id = "${data.vsphere_datacenter.dc.id}"
+
+#   uplinks         = ["uplink1"]
+#   active_uplinks  = ["uplink1"]
+#   standby_uplinks = []
+
+#   host {
+#     host_system_id = "${data.vsphere_host.host.0.id}"
+#     devices        = ["vmnic1"]
+#   }
+
+#   host {
+#     host_system_id = "${data.vsphere_host.host.1.id}"
+#     devices        = ["vmnic0"]
+#   }
+# }
+
+# resource "vsphere_distributed_virtual_switch" "dvs3" {
+#   name          = "DCcompany3_1"
+#   datacenter_id = "${data.vsphere_datacenter.dc.id}"
+
+#   uplinks         = ["uplink1"]
+#   active_uplinks  = ["uplink1"]
+#   standby_uplinks = []
+
+#   host {
+#     host_system_id = "${data.vsphere_host.host.0.id}"
+#     devices        = ["vmnic1"]
+#   }
+
+#   host {
+#     host_system_id = "${data.vsphere_host.host.1.id}"
+#     devices        = ["vmnic0"]
+#   }
+# }
+
 resource "vsphere_distributed_port_group" "pg-group5-data" {
   name                            = "Group5_Data"
   vlan_id                         = "0"
-  distributed_virtual_switch_uuid = "${vsphere_distributed_virtual_switch.dvs.id}"
+  distributed_virtual_switch_uuid = "${vsphere_distributed_virtual_switch.dvs1.id}"
   active_uplinks                  = ["uplink1"]
   standby_uplinks                 = []
 }
+
 resource "vsphere_vnic" "v1" {
   count                   = "${length(var.esxi_hosts)}"
   host                    = "${element(data.vsphere_host.host.*.id, count.index)}"
-  distributed_switch_port = vsphere_distributed_virtual_switch.dvs.id
+  distributed_switch_port = vsphere_distributed_virtual_switch.dvs1.id
   distributed_port_group  = vsphere_distributed_port_group.pg-group5-data.id
   ipv4 {
     dhcp = true
