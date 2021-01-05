@@ -4,7 +4,7 @@ Created using Windows AFG found at:
 ;http://www.windowsafg.com
 
 Installation Notes
-Location: Belgi덊Notes: Enter your comments here...
+Location: BelgiëNotes: Enter your comments here...
 **************************************************-->
 
 <?xml version="1.0" encoding="utf-8"?>
@@ -27,6 +27,12 @@ Location: Belgi덊Notes: Enter your comments here...
                         <DiskID>0</DiskID>
                         <PartitionID>2</PartitionID>
                     </InstallTo>
+                    <InstallFrom>
+                        <MetaData wcm:action="add">
+                          <Key>/image/index</Key>
+                          <Value>2</Value>
+                        </MetaData>
+                      </InstallFrom>
                 </OSImage>
             </ImageInstall>
             <UserData>
@@ -43,29 +49,29 @@ Location: Belgi덊Notes: Enter your comments here...
                     <CreatePartitions>
                         <CreatePartition wcm:action="add">
                             <Order>1</Order>
-                            <Size>350</Size>
+                            <Size>450</Size>
                             <Type>Primary</Type>
                         </CreatePartition>
                         <CreatePartition wcm:action="add">
-                            <Extend>true</Extend>
                             <Order>2</Order>
+                            <Extend>true</Extend>
                             <Type>Primary</Type>
                         </CreatePartition>
                     </CreatePartitions>
                     <ModifyPartitions>
                         <ModifyPartition wcm:action="add">
+                            <Active>true</Active>
                             <Format>NTFS</Format>
-                            <Label>System</Label>
+                            <Label>Systeem</Label>
                             <Order>1</Order>
                             <PartitionID>1</PartitionID>
-                            <TypeID>0x27</TypeID>
                         </ModifyPartition>
                         <ModifyPartition wcm:action="add">
+                            <Format>NTFS</Format>
+                            <Label>Windows</Label>
+                            <Letter>C</Letter>
                             <Order>2</Order>
                             <PartitionID>2</PartitionID>
-                            <Letter>C</Letter>
-                            <Label>OS</Label>
-                            <Format>NTFS</Format>
                         </ModifyPartition>
                     </ModifyPartitions>
                     <DiskID>0</DiskID>
