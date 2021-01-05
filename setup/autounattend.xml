@@ -25,14 +25,14 @@ Location: BelgiëNotes: Enter your comments here...
                 <OSImage>
                     <InstallTo>
                         <DiskID>0</DiskID>
-                        <PartitionID>1</PartitionID>
+                        <PartitionID>2</PartitionID>
                     </InstallTo>
                     <InstallFrom>
                         <MetaData wcm:action="add">
-                            <Key>/image/index</Key>
-                            <Value>2</Value>
+                          <Key>/image/index</Key>
+                          <Value>2</Value>
                         </MetaData>
-                    </InstallFrom>
+                      </InstallFrom>
                 </OSImage>
             </ImageInstall>
             <UserData>
@@ -60,12 +60,20 @@ Location: BelgiëNotes: Enter your comments here...
                     </CreatePartitions>
                     <ModifyPartitions>
                         <ModifyPartition wcm:action="add">
-                          <Order>1</Order> 
-                          <PartitionID>1</PartitionID> 
-                          <Label>System</Label> 
-                          <Format>NTFS</Format> 
-                          <Active>true</Active> 
+                            <Active>true</Active>
+                            <Format>NTFS</Format>
+                            <Label>Systeem</Label>
+                            <Order>1</Order>
+                            <PartitionID>1</PartitionID>
                         </ModifyPartition>
+                        <ModifyPartition wcm:action="add">
+                            <Format>NTFS</Format>
+                            <Label>Windows</Label>
+                            <Letter>C</Letter>
+                            <Order>2</Order>
+                            <PartitionID>2</PartitionID>
+                        </ModifyPartition>
+                    </ModifyPartitions>
                     <DiskID>0</DiskID>
                     <WillWipeDisk>true</WillWipeDisk>
                 </Disk>
