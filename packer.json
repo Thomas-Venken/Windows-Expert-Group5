@@ -34,13 +34,14 @@
         "network_adapters": [
           {
             "network": "VM Network",
-            "network_card": "vmxnet3"
+            "network_card": "e1000e"
           }
         ],
 
         "iso_paths": [
-          "[iSCSI-Group05] iso/nl_windows_server_2016_updated_feb_2018_x64_dvd_11636724.iso"
+          "[iSCSI-Group05] iso/en_windows_server_2019_x64_dvd_3c2cf1202.iso"
         ],
+        
         "floppy_files": [
           "setup/autounattend.xml"
         ]
