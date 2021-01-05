@@ -22,7 +22,7 @@
   
         "CPUs": "2",
         "RAM": "4096",
-        "firmware": "bios",
+        "firmware": "UEFI",
 
         "storage": [
           {
