@@ -25,7 +25,7 @@ Location: BelgiëNotes: Enter your comments here...
                 <OSImage>
                     <InstallTo>
                         <DiskID>0</DiskID>
-                        <PartitionID>0</PartitionID>
+                        <PartitionID>1</PartitionID>
                     </InstallTo>
                     <InstallFrom>
                         <MetaData wcm:action="add">
@@ -49,7 +49,7 @@ Location: BelgiëNotes: Enter your comments here...
                     <CreatePartitions>
                         <CreatePartition wcm:action="add">
                             <Order>1</Order>
-                            <Size>45</Size>
+                            <Size>450</Size>
                             <Type>Primary</Type>
                         </CreatePartition>
                         <CreatePartition wcm:action="add">
@@ -58,6 +58,14 @@ Location: BelgiëNotes: Enter your comments here...
                             <Type>Primary</Type>
                         </CreatePartition>
                     </CreatePartitions>
+                    <ModifyPartitions>
+                        <ModifyPartition wcm:action="add">
+                          <Order>1</Order> 
+                          <PartitionID>1</PartitionID> 
+                          <Label>System</Label> 
+                          <Format>NTFS</Format> 
+                          <Active>true</Active> 
+                        </ModifyPartition>
                     <DiskID>0</DiskID>
                     <WillWipeDisk>true</WillWipeDisk>
                 </Disk>
