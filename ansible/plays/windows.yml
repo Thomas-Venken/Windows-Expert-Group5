@@ -1,0 +1,8 @@
+---
+- name: Playbook for Windows
+  hosts: localhost
+  become: yes
+
+  roles:
+    - role: software/domaincontroller
+  
