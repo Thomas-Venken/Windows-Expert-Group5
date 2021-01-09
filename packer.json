@@ -40,6 +40,7 @@
         "setup/autounattend.xml",
         "setup/enable-winrm.ps1",
         "setup/install-vm-tools.cmd"
+
       ]
     }
   ]
