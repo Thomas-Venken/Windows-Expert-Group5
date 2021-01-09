@@ -41,7 +41,6 @@
         "setup/enable-winrm.ps1",
         "setup/server.ps1",
         "setup/install-vm-tools.cmd"
-
       ]
     }
   ]
