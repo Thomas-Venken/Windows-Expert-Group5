@@ -67,44 +67,6 @@ resource "vsphere_distributed_virtual_switch" "dvs1" {
   }
 }
 
-# resource "vsphere_distributed_virtual_switch" "dvs2" {
-#   name          = "DCcompany2_1"
-#   datacenter_id = "${data.vsphere_datacenter.dc.id}"
-
-#   uplinks         = ["uplink1"]
-#   active_uplinks  = ["uplink1"]
-#   standby_uplinks = []
-
-#   host {
-#     host_system_id = "${data.vsphere_host.host.0.id}"
-#     devices        = ["vmnic1"]
-#   }
-
-#   host {
-#     host_system_id = "${data.vsphere_host.host.1.id}"
-#     devices        = ["vmnic0"]
-#   }
-# }
-
-# resource "vsphere_distributed_virtual_switch" "dvs3" {
-#   name          = "DCcompany3_1"
-#   datacenter_id = "${data.vsphere_datacenter.dc.id}"
-
-#   uplinks         = ["uplink1"]
-#   active_uplinks  = ["uplink1"]
-#   standby_uplinks = []
-
-#   host {
-#     host_system_id = "${data.vsphere_host.host.0.id}"
-#     devices        = ["vmnic1"]
-#   }
-
-#   host {
-#     host_system_id = "${data.vsphere_host.host.1.id}"
-#     devices        = ["vmnic0"]
-#   }
-# }
-
 resource "vsphere_distributed_port_group" "pg-group5-data" {
   name                            = "Group5_Data"
   vlan_id                         = "0"

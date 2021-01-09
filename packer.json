@@ -21,12 +21,12 @@
         "winrm_password": "Pass1234",
   
         "CPUs": "2",
-        "RAM": "4096",
-        "firmware": "UEFI",
-
+        "RAM": "2048",
+        "firmware": "bios",
+        "disk_controller_type": "lsilogic-sas",
         "storage": [
           {
-            "disk_size": "32768",
+            "disk_size": "20000",
             "disk_thin_provisioned": true
           }
         ],
@@ -37,7 +37,7 @@
             "network_card": "e1000e"
           }
         ],
-
+        
         "iso_paths": [
           "[iSCSI-Group05] iso/en_windows_server_2019_x64_dvd_3c2cf1202.iso"
         ],

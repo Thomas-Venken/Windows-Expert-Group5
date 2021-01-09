@@ -35,47 +35,27 @@ Location: BelgiëNotes: Enter your comments here...
                     <CreatePartitions>
                         <CreatePartition wcm:action="add">
                             <Order>1</Order>
-                            <Size>500</Size>
+                            <Size>15000</Size>
                             <Type>Primary</Type>
                         </CreatePartition>
                         <CreatePartition wcm:action="add">
                             <Order>2</Order>
-                            <Extend>false</Extend>
-                            <Type>EFI</Type>
-                            <Size>100</Size>
-                        </CreatePartition>
-                        <CreatePartition wcm:action="add">
-                            <Order>3</Order>
-                            <Size>16</Size>
-                            <Type>MSR</Type>
-                        </CreatePartition>
-                        <CreatePartition wcm:action="add">
                             <Extend>true</Extend>
-                            <Order>4</Order>
                             <Type>Primary</Type>
                         </CreatePartition>
                     </CreatePartitions>
                     <ModifyPartitions>
                         <ModifyPartition wcm:action="add">
+                            <Active>true</Active>
                             <Format>NTFS</Format>
-                            <Label>Systeem</Label>
+                            <Label>System</Label>
                             <Order>1</Order>
                             <PartitionID>1</PartitionID>
                         </ModifyPartition>
                         <ModifyPartition wcm:action="add">
-                            <Order>4</Order>
-                            <PartitionID>4</PartitionID>
-                            <Letter>C</Letter>
-                            <Label>Windows</Label>
                             <Format>NTFS</Format>
-                        </ModifyPartition>
-                        <ModifyPartition wcm:action="add">
-                            <Order>3</Order>
-                            <PartitionID>3</PartitionID>
-                        </ModifyPartition>
-                        <ModifyPartition wcm:action="add">
-                            <Format>FAT32</Format>
-                            <Label>System</Label>
+                            <Label>Windows</Label>
+                            <Letter>C</Letter>
                             <Order>2</Order>
                             <PartitionID>2</PartitionID>
                         </ModifyPartition>
@@ -88,14 +68,14 @@ Location: BelgiëNotes: Enter your comments here...
                 <OSImage>
                     <InstallTo>
                         <DiskID>0</DiskID>
-                        <PartitionID>4</PartitionID>
+                        <PartitionID>1</PartitionID>
                     </InstallTo>
                     <InstallFrom>
                         <MetaData wcm:action="add">
-                          <Key>/image/index</Key>
-                          <Value>2</Value>
+                            <Key>/image/index</Key>
+                            <Value>2</Value>
                         </MetaData>
-                      </InstallFrom>
+                    </InstallFrom>
                 </OSImage>
             </ImageInstall>
         </component>
