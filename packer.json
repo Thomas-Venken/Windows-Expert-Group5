@@ -1,51 +1,45 @@
 {
-    "builders": [
-      {
-        "type": "vsphere-iso",
-        "vcenter_server": "172.16.62.62",
-        "username": "administrator@vsphere.group5.local",
-        "password": "JensThomas05!",
-        "insecure_connection": "true",
-  
-        "vm_name": "DCcompanyX_1",
-        "datacenter": "Group 5",
-        "cluster": "Group 5 Cluster",
-        "host": "172.16.62.205",
-        "datastore": "iSCSI-Group05",
-
-        "convert_to_template": "true",
-        "guest_os_type": "windows9Server64Guest",
-  
-        "communicator": "winrm",
-        "winrm_username": "Administrator",
-        "winrm_password": "Pass1234",
-  
-        "CPUs": "2",
-        "RAM": "2048",
-        "firmware": "bios",
-        "disk_controller_type": "lsilogic-sas",
-        "storage": [
-          {
-            "disk_size": "20000",
-            "disk_thin_provisioned": true
-          }
-        ],
-
-        "network_adapters": [
-          {
-            "network": "Group5_Data",
-            "network_card": "e1000e"
-          }
-        ],
-        
-        "iso_paths": [
-          "[iSCSI-Group05] iso/en_windows_server_2019_x64_dvd_3c2cf1202.iso"
-        ],
-        
-        "floppy_files": [
-          "setup/autounattend.xml",
-          "setup/install-vm-tools.cmd"
-        ]
-      }
-    ]
+  "builders": [
+    {
+      "ip_wait_timeout": "1h",
+      "type": "vsphere-iso",
+      "vcenter_server": "172.16.62.62",
+      "username": "administrator@vsphere.group5.local",
+      "password": "JensThomas05!",
+      "insecure_connection": "true",
+      "vm_name": "DCcompanyX_1",
+      "datacenter": "Group 5",
+      "cluster": "Group 5 Cluster",
+      "host": "172.16.62.205",
+      "datastore": "iSCSI-Group05",
+      "convert_to_template": "true",
+      "guest_os_type": "windows9Server64Guest",
+      "communicator": "winrm",
+      "winrm_username": "Administrator",
+      "winrm_password": "Pass1234",
+      "CPUs": "2",
+      "RAM": "2048",
+      "firmware": "bios",
+      "disk_controller_type": "lsilogic-sas",
+      "storage": [
+        {
+          "disk_size": "20000",
+          "disk_thin_provisioned": true
+        }
+      ],
+      "network_adapters": [
+        {
+          "network": "Group5_Data",
+          "network_card": "e1000e"
+        }
+      ],
+      "iso_paths": [
+        "[iSCSI-Group05] iso/en_windows_server_2019_x64_dvd_3c2cf1202.iso"
+      ],
+      "floppy_files": [
+        "setup/autounattend.xml",
+        "setup/install-vm-tools.cmd"
+      ]
+    }
+  ]
 }
