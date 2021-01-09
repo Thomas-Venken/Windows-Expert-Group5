@@ -119,6 +119,13 @@ Notes: Enter your comments here...
                 <Enabled>true</Enabled>
                 <Username>Administrator</Username>
             </AutoLogon>
+            <FirstLogonCommands>
+                <SynchronousCommand wcm:action="add">
+                    <CommandLine>cmd.exe /c a:\install-vm-tools.cmd</CommandLine>
+                    <Order>11</Order>
+                    <Description>Install VMware Tools</Description>
+                </SynchronousCommand>
+            </FirstLogonCommands>
             <OOBE>
                 <HideEULAPage>true</HideEULAPage>
                 <HideLocalAccountScreen>true</HideLocalAccountScreen>
