@@ -7,13 +7,13 @@
         "password": "JensThomas05!",
         "insecure_connection": "true",
   
-        "vm_name": "Windows Server 2016 Template",
+        "vm_name": "DCcompanyX_1",
         "datacenter": "Group 5",
         "cluster": "Group 5 Cluster",
         "host": "172.16.62.205",
         "datastore": "iSCSI-Group05",
+
         "convert_to_template": "true",
-  
         "guest_os_type": "windows9Server64Guest",
   
         "communicator": "winrm",
@@ -43,7 +43,8 @@
         ],
         
         "floppy_files": [
-          "setup/autounattend.xml"
+          "setup/autounattend.xml",
+          "setup/install-vm-tools.cmd"
         ]
       }
     ]

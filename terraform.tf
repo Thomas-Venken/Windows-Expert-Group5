@@ -49,7 +49,7 @@ data "vsphere_host" "host" {
 #####################################################################
 
 resource "vsphere_distributed_virtual_switch" "dvs1" {
-  name          = "DCcompany1_1"
+  name          = "CcompanyX"
   datacenter_id = "${data.vsphere_datacenter.dc.id}"
 
   uplinks         = ["uplink1"]
