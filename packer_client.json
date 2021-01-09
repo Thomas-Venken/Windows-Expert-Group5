@@ -7,7 +7,7 @@
       "username": "administrator@vsphere.group5.local",
       "password": "JensThomas05!",
       "insecure_connection": "true",
-      "vm_name": "DCcompanyX_1",
+      "vm_name": "DCcompany2_1",
       "datacenter": "Group 5",
       "cluster": "Group 5 Cluster",
       "host": "172.16.62.205",
@@ -38,9 +38,10 @@
       ],
       "floppy_files": [
         "setup/autounattend.xml",
+        "setup/install-vm-tools.cmd",
         "setup/enable-winrm.ps1",
-        "setup/client.ps1",
-        "setup/install-vm-tools.cmd"
+        "setup/client.ps1"
+        
 
       ]
     }

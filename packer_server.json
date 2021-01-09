@@ -7,7 +7,7 @@
       "username": "administrator@vsphere.group5.local",
       "password": "JensThomas05!",
       "insecure_connection": "true",
-      "vm_name": "DCcompanyX_1",
+      "vm_name": "DCcompany1_1",
       "datacenter": "Group 5",
       "cluster": "Group 5 Cluster",
       "host": "172.16.62.205",
