@@ -12,7 +12,6 @@
       "cluster": "Group 5 Cluster",
       "host": "172.16.62.205",
       "datastore": "iSCSI-Group05",
-      "convert_to_template": "true",
       "guest_os_type": "windows9Server64Guest",
       "communicator": "winrm",
       "winrm_username": "Administrator",
@@ -34,10 +33,12 @@
         }
       ],
       "iso_paths": [
-        "[iSCSI-Group05] iso/en_windows_server_2019_x64_dvd_3c2cf1202.iso"
+        "[iSCSI-Group05] iso/en_windows_server_2019_x64_dvd_3c2cf1202.iso",
+        "[] /usr/lib/vmware/isoimages/windows.iso"
       ],
       "floppy_files": [
         "setup/autounattend.xml",
+        "setup/enable-winrm.ps1",
         "setup/install-vm-tools.cmd"
       ]
     }
