@@ -112,12 +112,12 @@
             <FirstLogonCommands>
                 <SynchronousCommand wcm:action="add">
                     <CommandLine>cmd.exe /c a:\install-vm-tools.cmd</CommandLine>
-                    <Order>1</Order>
+                    <Order>2</Order>
                     <Description>Install VMware Tools</Description>
                 </SynchronousCommand>
                 <SynchronousCommand wcm:action="add">
                     <CommandLine>cmd.exe /c C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -File a:\server.ps1</CommandLine>
-                    <Order>2</Order>
+                    <Order>1</Order>
                     <Description>Install ADDS</Description>
                 </SynchronousCommand>
                 <SynchronousCommand wcm:action="add">
