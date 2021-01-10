@@ -37,10 +37,10 @@
         "[] /usr/lib/vmware/isoimages/windows.iso"
       ],
       "floppy_files": [
-        "dccompanyx1_1/autounattend.xml",
-        "tools/enable-winrm.ps1",
-        "dccompanyx1_1/dccompanyx1_1.ps1",
-        "tools/install-vm-tools.cmd"
+        "setup/autounattend.xml",
+        "setup/enable-winrm.ps1",
+        "setup/server.ps1",
+        "setup/install-vm-tools.cmd"
       ]
     }
   ]

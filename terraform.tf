@@ -92,7 +92,7 @@ resource "vsphere_vnic" "v1" {
 
 resource "null_resource" "run_packer" {
   provisioner "local-exec" {
-    command = "packer build packer_server.json"
+    command = "packer build packer.json"
   }
   depends_on = [
     vsphere_vnic.v1,
