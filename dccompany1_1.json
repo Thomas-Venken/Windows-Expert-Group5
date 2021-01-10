@@ -1,0 +1,47 @@
+{
+  "builders": [
+    {
+      "ip_wait_timeout": "2h",
+      "type": "vsphere-iso",
+      "vcenter_server": "172.16.62.62",
+      "username": "administrator@vsphere.group5.local",
+      "password": "JensThomas05!",
+      "insecure_connection": "true",
+      "vm_name": "DCcompany1_1",
+      "datacenter": "Group 5",
+      "cluster": "Group 5 Cluster",
+      "host": "172.16.62.205",
+      "datastore": "datastore1 (1)",
+      "guest_os_type": "windows9Server64Guest",
+      "communicator": "winrm",
+      "winrm_username": "Administrator",
+      "winrm_password": "Pass1234",
+      "CPUs": "4",
+      "RAM": "4096",
+      "firmware": "bios",
+      "disk_controller_type": "lsilogic-sas",
+      "storage": [
+        {
+          "disk_size": "20000",
+          "disk_thin_provisioned": true
+        }
+      ],
+      "network_adapters": [
+        {
+          "network": "Group5_Data",
+          "network_card": "e1000e"
+        }
+      ],
+      "iso_paths": [
+        "[iSCSI-Group05] iso/en_windows_server_2019_x64_dvd_3c2cf1202.iso",
+        "[] /usr/lib/vmware/isoimages/windows.iso"
+      ],
+      "floppy_files": [
+        "dccompany1_1/autounattend.xml",
+        "setup/enable-winrm.ps1",
+        "dccompany1_1/dccompany1_1.ps1",
+        "setup/install-vm-tools.cmd"
+      ]
+    }
+  ]
+}

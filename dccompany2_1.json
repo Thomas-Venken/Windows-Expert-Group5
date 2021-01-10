@@ -7,7 +7,7 @@
       "username": "administrator@vsphere.group5.local",
       "password": "JensThomas05!",
       "insecure_connection": "true",
-      "vm_name": "DCcompany1_1",
+      "vm_name": "DCcompany2_1",
       "datacenter": "Group 5",
       "cluster": "Group 5 Cluster",
       "host": "172.16.62.205",
@@ -37,9 +37,9 @@
         "[] /usr/lib/vmware/isoimages/windows.iso"
       ],
       "floppy_files": [
-        "dccompanyx1_1/autounattend.xml",
+        "dccompany2_1/autounattend.xml",
         "setup/enable-winrm.ps1",
-        "dccompanyx1_1/dccompanyx1_1.ps1",
+        "dccompany2_1/dccompany2_1.ps1",
         "setup/install-vm-tools.cmd"
       ]
     }
