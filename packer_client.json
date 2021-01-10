@@ -7,11 +7,11 @@
       "username": "administrator@vsphere.group5.local",
       "password": "JensThomas05!",
       "insecure_connection": "true",
-      "vm_name": "DCcompany2_1",
+      "vm_name": "DCcompany1_2",
       "datacenter": "Group 5",
       "cluster": "Group 5 Cluster",
       "host": "172.16.62.205",
-      "datastore": "iSCSI-Group05",
+      "datastore": "datastore1",
       "guest_os_type": "windows9Server64Guest",
       "communicator": "winrm",
       "winrm_username": "Administrator",
@@ -37,10 +37,10 @@
         "[] /usr/lib/vmware/isoimages/windows.iso"
       ],
       "floppy_files": [
-        "setup/autounattend.xml",
-        "setup/install-vm-tools.cmd",
+        "setup/autounattend_client.xml",
         "setup/enable-winrm.ps1",
-        "setup/client.ps1"
+        "setup/client.ps1",
+        "setup/install-vm-tools.cmd"
       ]
     }
   ]
