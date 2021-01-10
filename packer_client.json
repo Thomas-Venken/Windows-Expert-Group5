@@ -10,7 +10,7 @@
       "vm_name": "DCcompany1_2",
       "datacenter": "Group 5",
       "cluster": "Group 5 Cluster",
-      "host": "172.16.62.205",
+      "host": "172.16.62.59",
       "datastore": "datastore1",
       "guest_os_type": "windows9Server64Guest",
       "communicator": "winrm",
