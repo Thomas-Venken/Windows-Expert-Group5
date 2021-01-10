@@ -38,9 +38,9 @@
       ],
       "floppy_files": [
         "dccompanyx1_2/autounattend.xml",
-        "enable-winrm.ps1",
-        "dccompanyx1_2/client.ps1",
-        "install-vm-tools.cmd"
+        "tools/enable-winrm.ps1",
+        "dccompanyx1_2/dccompanyx1_2.ps1",
+        "tools/install-vm-tools.cmd"
       ]
     }
   ]
