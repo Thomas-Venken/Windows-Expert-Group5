@@ -49,7 +49,7 @@ data "vsphere_host" "host" {
 #####################################################################
 
 resource "vsphere_distributed_virtual_switch" "dvs1" {
-  name          = "CcompanyX"
+  name          = "DCcompanyX"
   datacenter_id = "${data.vsphere_datacenter.dc.id}"
 
   uplinks         = ["uplink1"]
@@ -84,17 +84,4 @@ resource "vsphere_vnic" "v1" {
     dhcp = true
   }
   netstack = "vmotion"
-}
-
-#####################################################################
-# PACKER
-#####################################################################
-
-resource "null_resource" "run_packer" {
-  provisioner "local-exec" {
-    command = "packer build packer_server.json"
-  }
-  depends_on = [
-    vsphere_vnic.v1,
-  ]
 }
