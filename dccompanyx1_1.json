@@ -39,7 +39,7 @@
       "floppy_files": [
         "dccompanyx1_1/autounattend.xml",
         "setup/enable-winrm.ps1",
-        "dccompanyx1_1/server.ps1",
+        "dccompanyx1_1/dccompanyx1_1.ps1",
         "setup/install-vm-tools.cmd"
       ]
     }
