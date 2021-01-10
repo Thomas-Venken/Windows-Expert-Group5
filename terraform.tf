@@ -85,16 +85,3 @@ resource "vsphere_vnic" "v1" {
   }
   netstack = "vmotion"
 }
-
-#####################################################################
-# PACKER
-#####################################################################
-
-resource "null_resource" "run_packer" {
-  provisioner "local-exec" {
-    command = "packer build packer.json"
-  }
-  depends_on = [
-    vsphere_vnic.v1,
-  ]
-}
